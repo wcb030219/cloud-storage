@@ -54,7 +54,7 @@ void TcpClient::handleAuthResponse(PDU *pdu, const char *successMsg, const char 
     if (strcmp(pdu->caData, successMsg) == 0) {
         QMessageBox::information(this, title, successMsg);
         if(strcmp(successMsg,LOGIN_OK) == 0){
-            m_strCurPath = QString("D:/QT/code/couled_s/TcpServer/%1").arg(m_strLoginName);
+            m_strCurPath = QString("D:/code/Qt/cloud-storage/TcpServer/%1").arg(m_strLoginName);
             opewidget::getInstance().setLoginName(m_strLoginName);
             opewidget::getInstance().show();
             hide();

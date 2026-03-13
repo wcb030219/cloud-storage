@@ -56,7 +56,7 @@ void MyTcpSocket::processAuthRequest(PDU *pdu,
         }
         if(pdu->uiMsgType == ENUM_MSG_TYPE_REGIST_REQUEST){
             QDir dir;
-            dir.mkdir(QString("D:/QT/code/couled_s/TcpServer/%1").arg(caName));
+            dir.mkdir(QString("D:/code/Qt/cloud-storage/TcpServer/%1").arg(caName));
         }
     }else{
          qstrncpy(respdu->caData,failMsg,sizeof(respdu->caData));

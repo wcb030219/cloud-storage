@@ -252,7 +252,7 @@ void Book::returnPre()
 {
     QString strCurPath = TcpClient::getInstance().curPath();
     QString strLoginName = TcpClient::getInstance().loginName();
-    QString strRootPath = QString("D:/QT/code/couled_s/TcpServer/%1").arg(strLoginName);
+    QString strRootPath = QString("D:/code/Qt/cloud-storage/TcpServer/%1").arg(strLoginName);
 
     // 统一路径分隔符，去除尾部斜杠（如果有）
     strCurPath = strCurPath.replace("\\", "/");
