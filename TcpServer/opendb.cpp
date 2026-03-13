@@ -22,7 +22,9 @@ void OpenDB::init()
 
     m_db = QSqlDatabase::addDatabase("QSQLITE");
 
-    m_db.setDatabaseName("D:\\code\\Qt\\QtSqlite\\cloud_s.db");
+    QString appPath = QCoreApplication::applicationDirPath();
+    m_db.setDatabaseName(appPath + "/cloud_s.db");
+    //m_db.setDatabaseName("D:\\QT\\QtSqlite\\cloud_s.db");
 
     if(!m_db.open()) {
         qDebug()<<"db not open:" << m_db.lastError().text();
@@ -36,7 +38,7 @@ void OpenDB::init()
         "id INTEGER PRIMARY KEY AUTOINCREMENT, "
         "name VARCHAR(32) UNIQUE NOT NULL, "
         "pwd VARCHAR(32) NOT NULL,"
-        "online integer DEFAULT 0)";
+        "online integer)";
     QString createFriendSQL =
         "CREATE TABLE IF NOT EXISTS friend ("
         "id INTEGER, "
